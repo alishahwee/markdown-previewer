@@ -2,31 +2,33 @@
 
 $gray: #6c757d;
 
-html,
+html, 
 body {
   font-family: Arial, Helvetica, sans-serif;
   height: 100vh;
-  margin: 0 auto;
-  padding: 0 1rem;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
 }
 
-#root,
+#root {
+  height: 100%;
+  margin: auto;
+  max-width: 1440px;
+}
+
 .body-wrapper {
   display: flex;
   flex-flow: column;
   height: 100%;
-  max-width: 1440px;
+  padding: 0 2rem;
 }
 
 .body-wrapper::after {
   content: "";
-  height: 1rem;
-  width: 100vw;
   background-color: white;
+  height: 2rem;
+  width: 100vw;
   z-index: 2;
 }
 
@@ -55,9 +57,8 @@ body {
 
 .main {
   display: flex;
-  flex: 1 1 auto;
   width: 100%;
-  height: calc(100% - 120px);
+  height: calc(100% - 105px);
 }
 
 .editor,
@@ -85,9 +86,8 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-  html,
-  body {
-    padding: 0 0.5rem;
+  * {
+    font-size: 0.8rem;
   }
 
   .header {
@@ -107,7 +107,7 @@ body {
   }
 
   .main {
-    height: calc(100% - 165px);
+    height: calc(100% - 120px);
     flex-flow: column-reverse;
   }
 
@@ -123,9 +123,8 @@ body {
   .editor {
     z-index: 1;
     height: 30%;
-    padding-bottom: 0.5rem;
     &__input {
-      width: 98.5%;
+      width: 100%;
     }
   }
 }
